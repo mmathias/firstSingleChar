@@ -1,21 +1,21 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Application {
 
-    public char getFirstSingleChar(String string) {
-        char character = string.charAt(0);
-        int i = 1;
+    public String getFirstSingleChar(String original) {
+        List<String> parsedChars = new ArrayList<>();
 
-        while (i < string.length()) {
-            if (character == string.charAt(i)) {
-                string = string.replaceAll(String.valueOf(character), "");
-                i = 1;
-                if (string.length() > 0) {
-                    character = string.charAt(0);
-                }
-            } else  {
-                i++;
+        for (Character c: original.toCharArray()) {
+            String each = c.toString();
+
+            if (parsedChars.contains(each)){
+                parsedChars.remove(each);
+            } else {
+                parsedChars.add(each);
             }
         }
 
-        return string.length() > 0 ? string.charAt(0) : '-';
+        return parsedChars.isEmpty() ? "-" : parsedChars.get(0);
     }
 }
