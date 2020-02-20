@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adf51017-28f7-43ba-a9c2-12c184b3ef8e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
     </list>
@@ -123,6 +124,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state width="1878" height="423" key="GridCell.Tab.1.right/0.0.1920.1200@0.0.1920.1200" timestamp="1582155044587" />
+    <state x="354" y="297" key="new project wizard" timestamp="1582187472129">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="354" y="297" key="new project wizard/0.0.1920.1200@0.0.1920.1200" timestamp="1582187472129" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

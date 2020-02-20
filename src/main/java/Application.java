@@ -12,7 +12,7 @@ public class Application {
         return getTheFirstOneWith1asOcurencies(ocurrencies);
     }
 
-    private char getTheFirstOneWith1asOcurencies(HashMap<Character, Integer> ocurrencies) {
+    private char getTheFirstOneWith1asOcurencies(LinkedHashMap<Character, Integer> ocurrencies) {
         for (Map.Entry<Character, Integer> entity : ocurrencies.entrySet()) {
             if (entity.getValue() == 1) return entity.getKey();
         }
