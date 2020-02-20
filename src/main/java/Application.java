@@ -1,29 +1,27 @@
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Application {
 
     public char getFirstSingleChar(String string) {
         char[] characters = string.toCharArray();
 
-        // getCounterPerCharacter
-        HashMap<Character, Integer> ocurrencies = getCounterPerCharacter(characters);
+        LinkedHashMap<Character, Integer> ocurrencies = getCounterPerCharacter(characters);
 
-        // getTheFirstOneWith1asOcurencies
-        return getTheFirstOneWith1asOcurencies(characters, ocurrencies);
+        return getTheFirstOneWith1asOcurencies(ocurrencies);
     }
 
-    private char getTheFirstOneWith1asOcurencies(char[] characters, HashMap<Character, Integer> ocurrencies) {
-        for (char character : characters) {
-            if (ocurrencies.get(character) == 1) {
-                return character;
-            }
+    private char getTheFirstOneWith1asOcurencies(HashMap<Character, Integer> ocurrencies) {
+        for (Map.Entry<Character, Integer> entity : ocurrencies.entrySet()) {
+            if (entity.getValue() == 1) return entity.getKey();
         }
 
         return '-';
     }
 
-    private HashMap<Character, Integer> getCounterPerCharacter(String characters) {
-        HashMap<Character, Integer> ocurrencies = new HashMap<>();
+    private LinkedHashMap<Character, Integer> getCounterPerCharacter(char[] characters) {
+        LinkedHashMap<Character, Integer> ocurrencies = new LinkedHashMap<>();
 
         for (char character : characters) {
             if (ocurrencies.containsKey(character)) {
