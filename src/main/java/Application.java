@@ -1,36 +1,21 @@
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 public class Application {
 
     public char getFirstSingleChar(String string) {
-        char[] characters = string.toCharArray();
+        char character = string.charAt(0);
+        int i = 1;
 
-        LinkedHashMap<Character, Integer> ocurrencies = getCounterPerCharacter(characters);
-
-        return getTheFirstOneWith1asOcurencies(ocurrencies);
-    }
-
-    private char getTheFirstOneWith1asOcurencies(LinkedHashMap<Character, Integer> ocurrencies) {
-        for (Map.Entry<Character, Integer> entity : ocurrencies.entrySet()) {
-            if (entity.getValue() == 1) return entity.getKey();
-        }
-
-        return '-';
-    }
-
-    private LinkedHashMap<Character, Integer> getCounterPerCharacter(char[] characters) {
-        LinkedHashMap<Character, Integer> ocurrencies = new LinkedHashMap<>();
-
-        for (char character : characters) {
-            if (ocurrencies.containsKey(character)) {
-                ocurrencies.put(character, ocurrencies.get(character) + 1);
-            } else {
-                ocurrencies.put(character, 1);
+        while (i < string.length()) {
+            if (character == string.charAt(i)) {
+                string = string.replaceAll(String.valueOf(character), "");
+                i = 1;
+                if (string.length() > 0) {
+                    character = string.charAt(0);
+                }
+            } else  {
+                i++;
             }
         }
 
-        return ocurrencies;
+        return string.length() > 0 ? string.charAt(0) : '-';
     }
 }
